@@ -1,3 +1,5 @@
+const convert = require('convert-units')
+
 function isObject(x) {
   return Object.prototype.toString.call(x) === '[object Object]';
 }
@@ -37,8 +39,8 @@ function floorTilesCalculator(tile, floorPlan) {
 
   const costPerTile = tile.price
   const areaPerTile = tile.width * tile.height
-  const floorPlanWidth = unitConverter(floorPlan.unit, tile.unit, floorPlan.width)
-  const floorPlanHeight = unitConverter(floorPlan.unit, tile.unit, floorPlan.height)
+  const floorPlanWidth = convert(floorPlan.width).from(floorPlan.unit).to(tile.unit)
+  const floorPlanHeight = convert(floorPlan.height).from(floorPlan.unit).to(tile.unit)
   const floorPlanArea = floorPlanWidth * floorPlanHeight
   const numberOfTiles = floorPlanArea / areaPerTile
 
