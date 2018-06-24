@@ -1,7 +1,7 @@
 const floorTilesCalculator = require('./floor-tiles-calculator')
 
 describe('floorTilesCalculator', () => {
-  it ('returns total cost and total tiles', () => {
+  it('returns total cost and total tiles', () => {
     // arrange
     const tile = {
       width: 10,
