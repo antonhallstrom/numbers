@@ -32,7 +32,6 @@ function makeChange(coins, amount) {
   let numbers = range(1, amount + 1)
   let s = range(1, amount + 1)
 
-
   numbers.forEach(n => {
     coins.forEach(c => {
 
