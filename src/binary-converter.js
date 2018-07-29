@@ -22,7 +22,7 @@ function splitNumber(number) {
 
 /**
  * Converts binary to decimal
- * @param {number} number Binary
+ * @param {number} binary Binary
  */
 function binaryToDecimal(binary) {
   const bits = splitNumber(binary)

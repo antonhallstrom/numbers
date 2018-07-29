@@ -12,7 +12,7 @@ describe('binaryConverter', () => {
     expect(converted).toEqual(10)
   })
 
-  it('converts decimal to binary', () => {
+  it('converts binary to decimal', () => {
     // arrange
     const binary = 10
 
