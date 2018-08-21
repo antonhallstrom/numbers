@@ -18,6 +18,11 @@
   *  Newton's method of succesive approximations.
   */
 
+// Utility function
+function isNumber(x) {
+  return Object.prototype.toString.call(x) === '[object Number]'
+}
+
 let previousGuess = 0
 let tolerance = 0.001
 
@@ -34,10 +39,14 @@ function goodEnough(guess, number) {
 }
 
 function squareRoot(guess, number) {
+  if (isNumber(guess) && isNumber(number)) {
+    throw new Error('Arguments to squareRoot must be of type Number.')
+  }
+
   if (goodEnough(guess, number)) {
     return guess
   } else {
     previousGuess = guess
-    return squareRoot(average(guess, improve(guess, number)))
+    return squareRoot(average(guess, improve(guess, number)), number)
   }
 }
